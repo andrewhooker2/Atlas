@@ -17,9 +17,18 @@ This Python script serves as an interface for interacting with the OpenAI API to
 - `python-dotenv` library for loading environment variables
 
 ## Installation
+It is suggested that you use a virtual enviroment for this.
+If you dont know how to make one you can use the following command.
+This command will make your virtual enviroment and start it with source.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
 
 Install the required dependencies with pip:
 There is a requirements.txt to make this a bit easier for new people.
+Just make sure you see (venv) before running this command. 
 
 ```bash
 pip install -r requirements.txt
