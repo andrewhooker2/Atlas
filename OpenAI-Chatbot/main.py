@@ -3,8 +3,9 @@ import os
 import openai
 import header
 from dotenv import load_dotenv
+import chat
 
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env.template')
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -15,24 +16,6 @@ model = os.getenv("OPENAI_MODEL")
 
 # Initialize conversation history
 conversation_history = []
-
-
-def chat_with_openai(user_input):
-    # Add the user's message to the conversation history
-    conversation_history.append({"role": "user", "content": user_input})
-
-    # Call the OpenAI API
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=conversation_history
-    )
-
-    # Extract the assistant's message from the response and add it to the conversation history
-    print("Chat ID: ", response.openai_id)
-    ai_message = response['choices'][0]['message']['content']
-    conversation_history.append({"role": "assistant", "content": ai_message})
-
-    return ai_message
 
 
 def main():
@@ -48,7 +31,8 @@ def main():
             user_input = input("You: ")
             if user_input.lower() == "quit":
                 break
-            ai_response = chat_with_openai(user_input)
+
+            ai_response = chat.chat_with_openai(user_input, conversation_history)
             print(f"AI: {ai_response}")
         except openai.error.OpenAIError as e:
             print(f"An error occurred: {e}")
