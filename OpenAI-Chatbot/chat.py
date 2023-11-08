@@ -1,12 +1,6 @@
 import openai
-import os
 import requests
-
-from dotenv import load_dotenv
-
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
-model = os.getenv("OPENAI_MODEL")
+import config
 
 
 def chat_with_openai(user_input, conversation_history):
@@ -15,7 +9,7 @@ def chat_with_openai(user_input, conversation_history):
 
     # Call the OpenAI API
     response = openai.ChatCompletion.create(
-        model=model,
+        model=config.model,
         messages=conversation_history
     )
 

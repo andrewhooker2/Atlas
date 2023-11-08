@@ -1,22 +1,10 @@
 # This is a sample Python script to act as a chatbot with openAI
-import os
 import openai
 import header
-from dotenv import load_dotenv
-import chat
-
-dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-load_dotenv(dotenv_path)
-
-openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_version = os.getenv("API_VERSION")
-
-deployment_name = os.getenv("DEPLOYMENT_NAME")
-model = os.getenv("OPENAI_MODEL")
+from chat import chat_with_openai as conversation
 
 # Initialize conversation history
 conversation_history = []
-
 
 def main():
     # Printing Header feel free to remove!
@@ -32,7 +20,7 @@ def main():
             if user_input.lower() == "quit":
                 break
 
-            ai_response = chat.chat_with_openai(user_input, conversation_history)
+            ai_response = conversation(user_input, conversation_history)
             print(f"AI: {ai_response}")
         except openai.error.OpenAIError as e:
             print(f"An error occurred: {e}")
