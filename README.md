@@ -1,6 +1,6 @@
 # OpenAI Chatbot
 
-This Python script serves as an interface for interacting with the OpenAI API to create a conversational chatbot. It allows for maintaining a conversation history and dynamically generates responses using OpenAI's language models.
+This Python script serves as an interface for interacting with the OpenAI API to create a conversational chatbot. It allows for maintaining a conversation history and dynamically generates responses using OpenAI's language models. Feel free to steal this code!
 
 ## Features
 
