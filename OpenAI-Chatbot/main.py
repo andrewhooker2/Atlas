@@ -6,6 +6,7 @@ from chat import chat_with_openai as conversation
 # Initialize conversation history
 conversation_history = []
 
+
 def main():
     # Printing Header feel free to remove!
     header.header_print()

@@ -1,6 +1,5 @@
 import os
 import openai
-import header
 from dotenv import load_dotenv
 
 
