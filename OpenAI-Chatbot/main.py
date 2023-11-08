@@ -2,6 +2,7 @@
 import openai
 import header
 from chat import chat_with_openai as conversation
+from embedding import gen_embedding
 
 # Initialize conversation history
 conversation_history = []
@@ -23,6 +24,8 @@ def main():
 
             ai_response = conversation(user_input, conversation_history)
             print(f"AI: {ai_response}")
+            print(gen_embedding(ai_response))
+
         except openai.error.OpenAIError as e:
             print(f"An error occurred: {e}")
 

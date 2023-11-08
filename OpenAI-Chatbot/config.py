@@ -10,4 +10,5 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 openai.api_version = os.getenv("API_VERSION")
 
 deployment_name = os.getenv("DEPLOYMENT_NAME")
-model = os.getenv("OPENAI_MODEL")
+chat_model = os.getenv("OPENAI_MODEL")
+text_embedding_model = os.getenv("TEXT_EMBEDDING_MODEL")

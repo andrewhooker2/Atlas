@@ -9,7 +9,7 @@ def chat_with_openai(user_input, conversation_history):
 
     # Call the OpenAI API
     response = openai.ChatCompletion.create(
-        model=config.model,
+        model=config.chat_model,
         messages=conversation_history
     )
 
