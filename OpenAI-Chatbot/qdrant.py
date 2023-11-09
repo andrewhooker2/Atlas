@@ -29,10 +29,8 @@ def create_collection():
             collection_name=my_collection,
             vectors_config=models.VectorParams(size=config.openai_vector_dimension, distance=models.Distance.COSINE)
         )
-        print("Creating a Collection ... ")
-        print("Collection Name: ", first_collection)
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Collection Creation Error: {e}")
 
     # Might try this:
     # client.create_collection(
@@ -96,7 +94,7 @@ def search_similar_vectors(embedding):
         query_vector=embedding,
         with_vectors=False,
         with_payload=True,
-        score_threshold=0
+        score_threshold=0.8
     )
 
-    print(search)
+    return search

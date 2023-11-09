@@ -27,4 +27,4 @@ def chat_with_openai(user_input, conversation_history):
         print("Open AI did not respond...")
         return None
     except Exception as e:
-        print("Error: ", e)
+        print("OpenAI Error: ", e)
