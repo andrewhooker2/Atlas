@@ -11,12 +11,6 @@ qdrant_client = QdrantClient(
 )
 
 
-# vectors_config = models.VectorParams(
-#     size=config.openai_vector_dimension,
-#     distance=models.Distance.COSINE
-# ),
-
-
 def collection_status():
     collection_info = qdrant_client.get_collection(collection_name=config.qdrant_collection)
     list(collection_info)
@@ -81,9 +75,6 @@ def create_point(embedding, point_id, message_id):
 def temp_create_point(embedding, point_id, message_id, ai_response):
     uuid_value = uuid.uuid4()
 
-    print("Embedding: ")
-    print(embedding)
-
     qdrant_client.upsert(
         collection_name=config.qdrant_collection,
         points=[
@@ -100,10 +91,12 @@ def temp_create_point(embedding, point_id, message_id, ai_response):
 
 
 def search_similar_vectors(embedding):
-    qdrant_client.search(
+    search = qdrant_client.search(
         collection_name=config.qdrant_collection,
         query_vector=embedding,
         with_vectors=False,
         with_payload=True,
-        score_threshold=.5
+        score_threshold=0
     )
+
+    print(search)
