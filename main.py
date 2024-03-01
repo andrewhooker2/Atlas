@@ -1,4 +1,7 @@
 # Importing required modules
+import json
+import typing
+
 import openai
 import header
 from chat import chat_with_openai, grab_ai_message
@@ -36,15 +39,17 @@ def conversation():
             user_input = input("👤: ")
             if user_input.lower() == "quit":
                 break
+            embedding = gen_embedding(user_input)
+            qdrant.create_point(embedding, )
             print("[*] Communicating with OpenAI...")
             response = chat_with_openai(user_input, conversation_history)
+            print(response)
             ai_message = grab_ai_message(response, conversation_history)
             print(f"💻: {ai_message}")
             print("[*] Creating embedding...")
-            embedding = gen_embedding(ai_message)
 
             print("[*] Storing conversation point...")
-            qdrant.temp_create_point(embedding, counter, response.openai_id, ai_message)
+            qdrant.create_point(embedding, response)
             counter += 1
         except Exception as e:
             print("OpenAI has raised an Error: ", e)
@@ -80,6 +85,15 @@ def load_chat():
         print(f"OpenAI Loading Error: {e}")
 
 
+def load_chat_from_file():
+    file_name = "testfile.json"
+    conversation: typing.List[typing.Dict[str, str]] = []
+    with open(file_name, 'r') as f:
+        conversation = json.load(open(file_name))
+
+    test = qdrant.create_points_batch(conversation)
+
+
 def main():
     qdrant.create_collection()
     header.header_print()
@@ -89,7 +103,7 @@ def main():
     if user_choice == "1":
         load_chat()
     elif user_choice == "2":
-        conversation()
+        load_chat_from_file()
     else:
         print("[-] Invalid choice...")
     search()
