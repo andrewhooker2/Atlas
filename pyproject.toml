@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "atlas"
+version = "0.1.0"
+description = ""
+authors = ["Andrew Hooker <andrewhooker2@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+qdrant-client = "^1.7.3"
+openai = "^1.13.3"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
