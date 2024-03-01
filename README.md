@@ -1,38 +1,40 @@
-# OpenAI Chatbot
+# Atlas 🌍
 
-This Python script serves as an interface for interacting with the OpenAI API to create a conversational chatbot. It allows for maintaining a conversation history and dynamically generates responses using OpenAI's language models. Feel free to steal this code!
+## Introduction 🚀
+Welcome to **Atlas**! This is not just another AI research project; it's an adventure into the unknown territories of Artificial Intelligence. 
+The mission? To push the boundaries of what AI can and cannot do 🤖. We're here to explore, experiment, and expand the knowledge frontier of AI, making sure the AI community keeps growing and learning from our discoveries.
 
-## Features
+## Background 📖
+In the realm of AI, particularly with Large Language Models (LLMs), we've hit a snag—maintaining context beyond token limits is like trying to remember a dream after you wake up; it fades. 
+**Atlas** is here to change that. Imagine chats with AI that remember the start of the conversation, no matter how long it goes. That's the future we're building.
 
-- Loads configuration from environment variables.
-- Manages conversation state to maintain context across exchanges.
-- Uses OpenAI's powerful language models for generating responses.
-- Interactive chat loop allowing real-time conversation.
-- Expand on this and use it as you please this is just a starting point for others.
+## Objectives 🎯
+- **Test Multiple LLMs**: We're playing matchmaker with different Large Language Models to see which ones can hold a conversation without losing track. 🤹‍♂️
+- **Maintain Chat Context**: Our goal is to keep the chat's context as sticky as honey, making sure nothing important slips through the cracks. 🍯
+- **Leverage Qdrant**: Like a librarian with a photographic memory, Qdrant helps us manage our data efficiently and effectively. 📚
+- **Continuous R&D**: We're on a never-ending quest for knowledge, always looking for better ways to break through AI's current limitations. 🔍
 
-## Prerequisites
+## Technologies Used 💻
+- **Vector Database**: With Qdrant, we're handling data like a pro, ensuring we can always find what we need when we need it.
+- **Large Language Models**: It's a round-robin of AI models in our lab, testing each one's ability to keep up with our chats.
 
-- Python 3.x
-- `openai` library
-- `python-dotenv` library for loading environment variables
+## Research Outputs 📊
+Stay tuned! Once we release the primary dataset:
+- **Datasets**: A goldmine of time-stamped, context-rich chat logs.
+- **Methodologies**: The secret recipes we used to keep our chats coherent and context-aware.
+- **Performance Metrics**: A report on how each LLM fared in our tests.
+- **Technical Insights**: Nuggets of wisdom from the journey through AI's context retention challenge.
 
-## Installation
-It is suggested that you use a virtual enviroment for this.
-If you dont know how to make one you can use the following command.
-This command will make your virtual enviroment and start it with source.
+## Getting Started 🌟
+- Stay tuned -
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
+## Future Contributions 🤝
+After we release our first set of data, we'll be opening the doors wide for contributions and forks. 
+Imagine being part of shaping the future of AI—exciting, right? Keep an eye out for updates, and get ready to join us in this epic adventure!
 
-Install the required dependencies with pip:
-There is a requirements.txt to make this a bit easier for new people.
-Just make sure you see (venv) before running this command. 
 
-```bash
-pip install -r requirements.txt
-```
+## Contact 📬
+Got questions? Suggestions? Just want to chat about AI? Reach out!
 
-## Configuration
-Make sure to replace the filler text in the .env with your actual OpenAI API key and set the other environment variables according to your requirements.
+
+
