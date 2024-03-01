@@ -18,6 +18,9 @@ In the realm of AI, particularly with Large Language Models (LLMs), we've hit a 
 - **Vector Database**: With Qdrant, we're handling data like a pro, ensuring we can always find what we need when we need it.
 - **Large Language Models**: It's a round-robin of AI models in our lab, testing each one's ability to keep up with our chats.
 
+## Simple but new take on RAG 
+![Diagram of the RAG approach used in research](https://raw.githubusercontent.com/andrewhooker2/Atlas/main/Memory%20Management%20System%20Process.png)
+
 ## Research Outputs 📊
 Stay tuned! Once we release the primary dataset:
 - **Datasets**: A goldmine of time-stamped, context-rich chat logs.
